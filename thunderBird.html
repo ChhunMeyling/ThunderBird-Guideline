@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thunderbird Email Setup Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00539f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .download {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .download a {
+      background-color: #0177b7;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .download a:hover {
+      background-color: #005b91;
+    }
+    .accordion {
+      cursor: pointer;
+      background-color: #e2ecf4;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .accordion.active,
+    .accordion:hover {
+      background-color: #c8dff1;
+    }
+    .panel {
+      padding: 0 15px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+      border-left: 3px solid #0177b7;
+    }
+    .panel p {
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>How to Set Up Thunderbird with demo@chhunmeyling.com</h1>
+  </header>
+
+  <main>
+    <div class="download">
+      <p><strong>Step 1:</strong> Download Mozilla Thunderbird</p>
+      <a href="https://www.thunderbird.net/" target="_blank">Download Thunderbird</a>
+    </div>
+
+    <button class="accordion">Step 2: Install Thunderbird</button>
+    <div class="panel">
+      <p>Run the installer after downloading. Follow the on-screen instructions to complete installation.</p>
+    </div>
+
+    <button class="accordion">Step 3: Open Thunderbird and Add Account</button>
+    <div class="panel">
+      <p>Launch Thunderbird. On the welcome screen, choose <strong>'Set up an existing email account'</strong>.</p>
+    </div>
+
+    <button class="accordion">Step 4: Enter Email Credentials</button>
+    <div class="panel">
+      <p>
+        Enter the following details:<br/>
+        <strong>Your Name:</strong> Demo User<br/>
+        <strong>Email Address:</strong> demo@chhunmeyling.com<br/>
+        <strong>Password:</strong> [Your Password]
+      </p>
+    </div>
+
+    <button class="accordion">Step 5: Server Configuration</button>
+    <div class="panel">
+      <p>Choose Manual Config and use the following settings:</p>
+      <ul>
+        <li><strong>Incoming:</strong> IMAP, mail.chhunmeyling.com, Port: 993, SSL: SSL/TLS</li>
+        <li><strong>Outgoing:</strong> SMTP, mail.chhunmeyling.com, Port: 465, SSL: SSL/TLS</li>
+        <li><strong>Username:</strong> demo@chhunmeyling.com (for both)</li>
+      </ul>
+    </div>
+
+    <button class="accordion">Step 6: Confirm and Finish</button>
+    <div class="panel">
+      <p>Click 'Done' after Thunderbird verifies the settings. You’re ready to send and receive emails!</p>
+    </div>
+  </main>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(button => {
+      button.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
+</body>
+</html>
